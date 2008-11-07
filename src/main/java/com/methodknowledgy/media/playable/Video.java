@@ -29,7 +29,7 @@ public interface Video extends Playable {
 
 	/**
 	 * PlayState is a more granular indication of the current State of
-	 * a Video object. PlayState encompasses states specific to Video objects,
+	 * a Video Playable. PlayState encompasses states specific to Video Playables,
 	 * such as BUFFERING.
 	 * 
 	 * @return The current PlayState of this Video.
