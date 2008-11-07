@@ -28,13 +28,35 @@ public interface Video extends Playable {
 	URL getURL();
 
 	/**
-	 * PlayState is a more granular indication of the current State of
-	 * a Video Playable. PlayState encompasses states specific to Video Playables,
-	 * such as BUFFERING.
+	 * PlayState is a more granular indication of the current State of a Video
+	 * Playable. PlayState encompasses states specific to Video Playables, such
+	 * as BUFFERING.
 	 * 
 	 * @return The current PlayState of this Video.
 	 */
 	PlayState getPlayState();
+
+	/**
+	 * @return Current state of the buffer, or <code>null</code> if it cannot
+	 *         be determined.
+	 */
+	BufferState getBufferState();
+
+	/**
+	 * Describes the current buffer size in terms of capacity with regards to
+	 * the size of the Video. If the BufferState is UNUSED, the BufferSize is
+	 * not a number (NaN). A BufferSize of less than 1.0 indicates that the
+	 * buffer is underflowing compared to the rate of playback. A BufferSize of
+	 * greater than 1.0 indicates that the buffer is overflowing compared to the
+	 * rate of playback (the buffer is filling faster than necessary). Finally,
+	 * if the buffer has successfully buffered the entire Video, the BufferSize
+	 * will be Double.POSITIVE_INFINITY.
+	 * 
+	 * 
+	 * @return The current size of the buffer, or <code>null</code> if it
+	 *         cannot be determined.
+	 */
+	Double getBufferSize();
 
 	/**
 	 * Describes the current state of this Video object.
@@ -70,5 +92,25 @@ public interface Video extends Playable {
 	 */
 	public enum PlayState {
 		IDLE, BUFFERING, READY, PLAYING, REBUFFERING, RW_SCRUBBING, FF_SCRUBBING, PAUSED, STOPPED, FINISHED
+	}
+
+	/**
+	 * Expresses the current state of the buffer, if applicable. The buffer
+	 * state should agree with the BufferSize.
+	 * 
+	 * <ul>
+	 * <li><strong>UNUSED:</strong> A buffer is not being used for playback.</li>
+	 * <li><strong>EMPTY:</strong> The buffer is currently empty.</li>
+	 * <li><strong>UNDERFLOW:</strong> The buffer is not filling fast enough to sustain playback.</li>
+	 * <li><strong>STEADY:</strong> The buffer is sufficiently full to sustain playback.</li>
+	 * <li><strong>OVERFLOW:</strong> The buffer is filling faster than necessary to sustain playback.</li>
+	 * <li><strong>COMPLETE:</strong> The buffer has completely buffered the entire Video.</li>
+	 * </ul>
+	 * 
+	 * @author jcarlson
+	 * 
+	 */
+	public enum BufferState {
+		UNUSED, EMPTY, UNDERFLOW, STEADY, OVERFLOW, COMPLETE
 	}
 }
