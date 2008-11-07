@@ -18,12 +18,10 @@ public interface Playlist extends List<Playable>, Playable {
 
 	Playable getCurrent();
 	
-	int getIndex();
+	Integer getPosition();
 	
 	Playable getNext();
 	
 	Playable getPrevious();
-	
-	
 	
 }
