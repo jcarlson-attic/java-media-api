@@ -15,6 +15,9 @@
 	<description>
 		Multimedia API for use with other media-based projects
 	</description>
+	<scm>
+		<developerConnection>scm:svn:http://svn.assembla.com/svn/mkdev/MediaAPI/trunk</developerConnection>
+	</scm>
 	<repositories>
 		<repository>
 			<id>central</id>
