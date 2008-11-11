@@ -30,6 +30,4 @@ public interface Segment {
 	
 	Map<String, String> getAttributes();
 	
-	// TODO: Define a Segment
-
 }
