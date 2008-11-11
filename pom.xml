@@ -15,6 +15,15 @@
 	<scm>
 		<developerConnection>scm:svn:http://svn.assembla.com/svn/mkdev/MediaAPI/trunk</developerConnection>
 	</scm>
+	<distributionManagement>
+		<site>
+			<id>MKDev</id>
+			<name>MethodKnowledgy Development Website</name>
+			<url>
+				file://${env.HOME}/Sites/dev.methodknowledgy.com/docs/${project.artifactId}/${project.version}
+			</url>
+		</site>
+	</distributionManagement>
 	<repositories>
 		<repository>
 			<id>central</id>
