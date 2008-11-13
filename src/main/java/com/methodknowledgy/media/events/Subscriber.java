@@ -1,5 +1,5 @@
 package com.methodknowledgy.media.events;
 
-public interface Action {
+public interface Subscriber {
 
 }

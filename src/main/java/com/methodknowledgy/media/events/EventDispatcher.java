@@ -2,20 +2,14 @@ package com.methodknowledgy.media.events;
 
 public interface EventDispatcher {
 
-	void registerAction(Action action);
+	void subscribe(Subscriber subscriber);
 	
-	void registerAction(Class<Event> event, Action action);
+	void subscribe(Subscriber subscriber, Filter filter);
 	
-	void registerAction(Object generator, Action action);
+	void unsubscribe(Subscriber subscriber);
 	
-	void registerAction(Object generator, Event event, Action action);
+	void unsubscribe(Subscriber subscriber, Filter filter);
 	
-	void unregisterAction(Action action);
-	
-	void unregisterAction(Object generator, Action action);
-	
-	void unregisterAction(Object generator, Event event, Action action);
+	void dispatch(Object source, Event event);
 
-	void unregisterAction(Event event, Action action);
-	
 }
