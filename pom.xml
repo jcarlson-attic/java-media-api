@@ -1,4 +1,7 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<parent>
 		<artifactId>pom-parent</artifactId>
 		<groupId>com.methodknowledgy</groupId>
@@ -8,22 +11,13 @@
 	<groupId>com.methodknowledgy</groupId>
 	<artifactId>media-api</artifactId>
 	<name>Media API</name>
-	<version>0.1.2-alpha-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<description>
 		Multimedia API for use with other media-based projects
 	</description>
 	<scm>
 		<developerConnection>scm:svn:http://svn.assembla.com/svn/mkdev/MediaAPI/trunk</developerConnection>
 	</scm>
-	<distributionManagement>
-		<site>
-			<id>MKDev</id>
-			<name>MethodKnowledgy Development Website</name>
-			<url>
-				file://${env.HOME}/Sites/dev.methodknowledgy.com/docs/${project.artifactId}/${project.version}
-			</url>
-		</site>
-	</distributionManagement>
 	<repositories>
 		<repository>
 			<id>central</id>
@@ -36,4 +30,21 @@
 			<url>http://maven.methodknowledgy.com/</url>
 		</repository>
 	</repositories>
+	<distributionManagement>
+		<site>
+			<id>MKDev</id>
+			<name>MethodKnowledgy Development Website</name>
+			<url>
+				file://${env.HOME}/Sites/dev.methodknowledgy.com/docs/${pom.artifactId}/${pom.version}
+			</url>
+		</site>
+	</distributionManagement>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.5</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 </project>

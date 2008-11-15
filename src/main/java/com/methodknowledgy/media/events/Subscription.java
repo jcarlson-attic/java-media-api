@@ -6,4 +6,10 @@ public interface Subscription {
 	
 	Action getAction();
 	
+	boolean isValidOnFilterAbstain();
+	
+	<T> boolean isValidForEvent(T source, Event event);
+	
+	<T> void executeIfValid(T source, Event event);
+	
 }
