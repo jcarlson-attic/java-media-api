@@ -18,14 +18,14 @@ public class SubscriptionImplTest {
 	public void subscription_with_positive_filter() {
 		SubscriptionImpl s = new SubscriptionImpl();
 		s.setFilter(getTrueFilter());
-		Assert.assertTrue(s.isValidForEvent(null, null));
+		Assert.assertTrue(s.isValidForEvent(null));
 	}
 	
 	@Test
 	public void subscription_with_negative_filter() {
 		SubscriptionImpl s = new SubscriptionImpl();
 		s.setFilter(getFalseFilter());
-		Assert.assertFalse(s.isValidForEvent(null, null));
+		Assert.assertFalse(s.isValidForEvent(null));
 	}
 	
 	@Test
@@ -34,16 +34,16 @@ public class SubscriptionImplTest {
 		s.setFilter(getNullFilter());
 		
 		s.setValidOnFilterAbstain(true);
-		Assert.assertTrue(s.isValidForEvent(null, null));
+		Assert.assertTrue(s.isValidForEvent(null));
 
 		s.setValidOnFilterAbstain(false);
-		Assert.assertFalse(s.isValidForEvent(null, null));
+		Assert.assertFalse(s.isValidForEvent(null));
 	}
 	
 	@Test
 	public void subscription_with_no_filter() {
 		SubscriptionImpl s = new SubscriptionImpl();
-		Assert.assertTrue(s.isValidForEvent(null, null));
+		Assert.assertTrue(s.isValidForEvent(null));
 	}
 	
 	@Test
@@ -51,7 +51,7 @@ public class SubscriptionImplTest {
 		SubscriptionImpl s = new SubscriptionImpl();
 		TestAction action = new TestAction();
 		s.setAction(action);
-		s.executeIfValid(null, null);
+		s.executeIfValid(null);
 		Assert.assertTrue(action.executed);
 	}
 	
@@ -61,7 +61,7 @@ public class SubscriptionImplTest {
 		TestAction action = new TestAction();
 		s.setAction(action);
 		s.setFilter(getFalseFilter());
-		s.executeIfValid(null, null);
+		s.executeIfValid(null);
 		Assert.assertFalse(action.executed);
 	}
 	
@@ -71,7 +71,7 @@ public class SubscriptionImplTest {
 	
 	private Filter getTrueFilter() {
 		return new Filter() {
-			public <T> Boolean isMatch(T source, Event event, Action action) {
+			public <E extends Event<?>> Boolean isMatch(E event, Action action) {
 				return Boolean.TRUE;
 			}
 		};
@@ -79,7 +79,7 @@ public class SubscriptionImplTest {
 	
 	private Filter getFalseFilter() {
 		return new Filter() {
-			public <T> Boolean isMatch(T source, Event event, Action action) {
+			public <E extends Event<?>> Boolean isMatch(E event, Action action) {
 				return Boolean.FALSE;
 			}
 		};
@@ -87,7 +87,7 @@ public class SubscriptionImplTest {
 	
 	private Filter getNullFilter() {
 		return new Filter() {
-			public <T> Boolean isMatch(T source, Event event, Action action) {
+			public <E extends Event<?>> Boolean isMatch(E event, Action action) {
 				return null;
 			}
 		};
@@ -95,7 +95,7 @@ public class SubscriptionImplTest {
 	
 	private class TestAction implements Action {
 		public boolean executed = false;
-		public <T> void execute(T source, Event event) {
+		public <E extends Event<?>> void execute(E event) {
 			executed = true;
 		}
 	}

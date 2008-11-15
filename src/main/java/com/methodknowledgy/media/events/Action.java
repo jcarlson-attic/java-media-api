@@ -2,6 +2,6 @@ package com.methodknowledgy.media.events;
 
 public interface Action {
 
-	<T> void execute(T source, Event event);
+	<E extends Event<?>> void execute(E event);
 	
 }

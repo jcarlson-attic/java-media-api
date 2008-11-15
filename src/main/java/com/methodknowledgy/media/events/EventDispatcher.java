@@ -3,6 +3,8 @@ package com.methodknowledgy.media.events;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.methodknowledgy.media.events.impl.PropertyChangeEvent;
+
 public class EventDispatcher {
 
 	private static List<Subscription> instance = new ArrayList<Subscription>();
@@ -18,10 +20,19 @@ public class EventDispatcher {
 		instance.remove(subscription);
 	}
 
-	public static <T> void dispatch(T source, Event event) {
+	public static <E extends Event<?>> void dispatch(E event) {
 		for (Subscription subscription : instance) {
-			subscription.executeIfValid(source, event);
+			subscription.executeIfValid(event);
 		}
 	}
 
+	public static <S, T> void dispatch(S source, String propertyName, T oldValue, T newValue) {
+		dispatch(source, propertyName, oldValue, newValue, "");
+	}
+
+	public static <S, T> void dispatch(S source, String propertyName, T oldValue, T newValue, String message) {
+		PropertyChangeEvent<S, T> event = new PropertyChangeEvent<S, T>(
+				source, propertyName, oldValue, newValue, message);
+		dispatch(event);
+	}
 }

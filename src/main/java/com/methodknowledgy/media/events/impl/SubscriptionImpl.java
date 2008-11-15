@@ -11,20 +11,20 @@ public class SubscriptionImpl implements Subscription {
 	private Filter filter;
 	private boolean validOnFilterAbstain;
 
-	public <T> boolean isValidForEvent(T source, Event event) {
+	public <E extends Event<?>> boolean isValidForEvent(E event) {
 		if (filter == null) {
 			return true;
 		}
-		Boolean match = filter.isMatch(source, event, action);
+		Boolean match = filter.isMatch(event, action);
 		if (match == null) {
 			return validOnFilterAbstain;
 		}
 		return match;
 	}
 
-	public <T> void executeIfValid(T source, Event event) {
-		if (isValidForEvent(source, event) && action != null) {
-			action.execute(source, event);
+	public <E extends Event<?>> void executeIfValid(E event) {
+		if (isValidForEvent(event) && action != null) {
+			action.execute(event);
 		}
 	}
 

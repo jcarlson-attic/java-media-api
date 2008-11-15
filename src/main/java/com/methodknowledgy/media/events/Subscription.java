@@ -8,8 +8,8 @@ public interface Subscription {
 	
 	boolean isValidOnFilterAbstain();
 	
-	<T> boolean isValidForEvent(T source, Event event);
+	<E extends Event<?>> boolean isValidForEvent(E event);
 	
-	<T> void executeIfValid(T source, Event event);
+	<E extends Event<?>> void executeIfValid(E event);
 	
 }
