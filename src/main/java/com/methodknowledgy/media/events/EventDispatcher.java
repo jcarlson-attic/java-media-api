@@ -2,14 +2,10 @@ package com.methodknowledgy.media.events;
 
 public interface EventDispatcher {
 
-	void subscribe(Subscriber subscriber);
+	void register(Subscription subscription);
 	
-	void subscribe(Subscriber subscriber, Filter filter);
+	void unregister(Subscription subscription);
 	
-	void unsubscribe(Subscriber subscriber);
-	
-	void unsubscribe(Subscriber subscriber, Filter filter);
-	
-	void dispatch(Object source, Event event);
+	<T> void dispatch(T source, Event event);
 
 }
