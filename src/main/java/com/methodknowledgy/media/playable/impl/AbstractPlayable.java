@@ -24,7 +24,7 @@ public class AbstractPlayable implements Playable {
 	}
 
 	public void setAttributes(Map<String, String> attributes) {
-		this.attributes = attributes;
+		EventDispatcher.dispatch(this, "attributes", this.attributes, this.attributes = attributes);
 	}
 
 	public Renderer getRenderer() {
@@ -32,7 +32,7 @@ public class AbstractPlayable implements Playable {
 	}
 
 	public void setRenderer(Renderer renderer) {
-		this.renderer = renderer;
+		EventDispatcher.dispatch(this, "renderer", this.renderer, this.renderer = renderer);
 	}
 
 	public Long getRunTime() {
@@ -40,7 +40,7 @@ public class AbstractPlayable implements Playable {
 	}
 
 	public void setRunTime(Long runTime) {
-		this.runTime = runTime;
+		EventDispatcher.dispatch(this, "runTime", this.runTime, this.runTime = runTime);
 	}
 
 	public List<Segment> getSegments() {
@@ -48,7 +48,7 @@ public class AbstractPlayable implements Playable {
 	}
 
 	public void setSegments(List<Segment> segments) {
-		this.segments = segments;
+		EventDispatcher.dispatch(this, "segments", this.segments, this.segments = segments);
 	}
 
 	public State getState() {
@@ -73,7 +73,7 @@ public class AbstractPlayable implements Playable {
 	}
 
 	public void setScrubbable(Boolean scrubbable) {
-		this.scrubbable = scrubbable;
+		EventDispatcher.dispatch(this, "scrubbable", this.scrubbable, this.scrubbable = scrubbable);
 	}
 
 	public Boolean isSkippable() {
@@ -81,7 +81,7 @@ public class AbstractPlayable implements Playable {
 	}
 
 	public void setSkippable(Boolean skippable) {
-		this.skippable = skippable;
+		EventDispatcher.dispatch(this, "skippable", this.skippable, this.skippable = skippable);
 	}
 
 	public void render() {

@@ -1,7 +1,6 @@
 package com.methodknowledgy.media.events.impl;
 
 import com.methodknowledgy.media.events.Event;
-import com.methodknowledgy.media.events.EventType;
 
 public class PropertyChangeEvent<SourceType, PropertyType> implements Event<SourceType> {
 
@@ -43,11 +42,6 @@ public class PropertyChangeEvent<SourceType, PropertyType> implements Event<Sour
 
 	public String getMessage() {
 		return message;
-	}
-
-	public EventType getEventType() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

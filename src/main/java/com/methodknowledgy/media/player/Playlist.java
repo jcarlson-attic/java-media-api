@@ -1,6 +1,6 @@
 package com.methodknowledgy.media.player;
 
-import java.util.List;
+import java.util.ListIterator;
 
 import com.methodknowledgy.media.playable.Playable;
 
@@ -14,14 +14,10 @@ import com.methodknowledgy.media.playable.Playable;
  * @author jcarlson
  * 
  */
-public interface Playlist extends List<Playable>, Playable {
+public interface Playlist extends ListIterator<Playable>, Playable {
 
 	Playable getCurrent();
 	
-	Integer getPosition();
-	
-	Playable getNext();
-	
-	Playable getPrevious();
-	
+	Integer getCurrentIndex();
+		
 }
