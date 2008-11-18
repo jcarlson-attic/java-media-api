@@ -3,7 +3,7 @@ package com.methodknowledgy.media.playable.impl;
 import java.util.List;
 import java.util.Map;
 
-import com.methodknowledgy.media.events.EventDispatcher;
+import com.methodknowledgy.events.dispatch.EventDispatcher;
 import com.methodknowledgy.media.playable.Playable;
 import com.methodknowledgy.media.playable.Segment;
 import com.methodknowledgy.media.rendering.Renderer;

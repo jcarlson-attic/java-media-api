@@ -16,7 +16,9 @@
 		Multimedia API for use with other media-based projects
 	</description>
 	<scm>
-		<developerConnection>scm:svn:http://svn.assembla.com/svn/mkdev/MediaAPI/trunk</developerConnection>
+		<developerConnection>
+			scm:svn:http://svn.assembla.com/svn/mkdev/MediaAPI/trunk
+		</developerConnection>
 	</scm>
 	<repositories>
 		<repository>
@@ -45,6 +47,11 @@
 			<artifactId>junit</artifactId>
 			<version>4.5</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.methodknowledgy</groupId>
+			<artifactId>generic-event-support</artifactId>
+			<version>0.1.0-beta</version>
 		</dependency>
 	</dependencies>
 </project>
