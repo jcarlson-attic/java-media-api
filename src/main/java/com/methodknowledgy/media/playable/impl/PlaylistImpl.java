@@ -18,7 +18,7 @@ public abstract class PlaylistImpl extends Vector<Playable> implements Playlist 
     }
 
     public boolean hasCurrent() {
-        return size() > 0 && index > -1;
+        return index > -1;
     }
     
     public Playable current() {
@@ -72,42 +72,57 @@ public abstract class PlaylistImpl extends Vector<Playable> implements Playlist 
     
     
     
-
     @Override
     public synchronized boolean add(Playable o) {
-        // TODO Auto-generated method stub
+        if (!hasCurrent()) {
+            index++;
+        }
         return super.add(o);
     }
 
     @Override
     public synchronized boolean addAll(Collection<? extends Playable> c) {
-        // TODO Auto-generated method stub
+        if (!hasCurrent()) {
+            index++;
+        }
         return super.addAll(c);
     }
 
     @Override
     public synchronized boolean addAll(int index,
             Collection<? extends Playable> c) {
-        // TODO Auto-generated method stub
-        return super.addAll(index, c);
+        boolean b = super.addAll(index, c);
+        if (b && index <= this.index) {
+            this.index += c.size();
+        }
+        return b;
     }
 
     @Override
     public synchronized void addElement(Playable obj) {
-        // TODO Auto-generated method stub
+        if (!hasCurrent()) {
+            index++;
+        }
         super.addElement(obj);
     }
 
     @Override
     public synchronized void insertElementAt(Playable obj, int index) {
-        // TODO Auto-generated method stub
+        if (index <= this.index) {
+            this.index++;
+        }
         super.insertElementAt(obj, index);
     }
 
     @Override
     public synchronized Playable remove(int index) {
-        // TODO Auto-generated method stub
-        return super.remove(index);
+        Playable p = super.remove(index); 
+        if (index < this.index) {
+            this.index--;
+        } else if (index == this.index) {
+            
+        }
+        return p;
     }
 
     @Override
