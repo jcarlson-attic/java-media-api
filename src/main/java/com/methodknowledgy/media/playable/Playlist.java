@@ -38,4 +38,6 @@ public interface Playlist extends List<Playable>, Playable {
     Playable previous();
     
     
+    Playable jumpTo(int index);
+    
 }
