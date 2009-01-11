@@ -11,7 +11,7 @@ package com.methodknowledgy.media.player;
  * <p>
  * Because not all Players and Playables will support every method of transport,
  * control is generally expressed here as a Double that implies the rate of
- * playback. Special meaning is given to some valules, but the interpretation of
+ * playback. Special meaning is given to some values, but the interpretation of
  * a transport rate is otherwise left to the implementation classes.
  * </p>
  * 
