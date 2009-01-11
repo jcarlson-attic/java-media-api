@@ -8,7 +8,7 @@ import com.methodknowledgy.media.playable.Playable;
 import com.methodknowledgy.media.playable.Segment;
 import com.methodknowledgy.media.rendering.Renderer;
 
-public class AbstractPlayable implements Playable {
+public class PlayableImpl implements Playable {
 
     private Map<String, String> attributes;
     private Renderer renderer;
@@ -18,6 +18,12 @@ public class AbstractPlayable implements Playable {
     private Boolean active;
     private Boolean scrubbable;
     private Boolean skippable;
+    
+    public void initialize() {
+        setState(State.LOADING);
+        // whatever other prep-work needs done
+        setState(State.READY);
+    }
 
     public Map<String, String> getAttributes() {
         return attributes;

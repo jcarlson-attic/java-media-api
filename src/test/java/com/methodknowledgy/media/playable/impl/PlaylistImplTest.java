@@ -515,6 +515,10 @@ public class PlaylistImplTest {
     
     private static class TestPlayable implements Playable {
 
+        public void initialize() {
+            
+        }
+        
         public Map<String, String> getAttributes() {
             return null;
         }

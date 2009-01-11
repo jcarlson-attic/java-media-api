@@ -51,7 +51,7 @@
 		<dependency>
 			<groupId>com.methodknowledgy</groupId>
 			<artifactId>generic-event-support</artifactId>
-			<version>0.3.0-beta</version>
+			<version>0.3.0-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 </project>

@@ -76,24 +76,10 @@ public interface Transport {
 	void next();
 
 	/**
-	 * Ask the Player to skip to the last Playable (if it is not the current
-	 * one). Functionality depends on the current Playable as well as the
-	 * current Player. Some Playables may not allow themselves to be skipped.
-	 */
-	void last();
-
-	/**
 	 * Ask the Player to skip to the previous Playable (if there is one).
 	 * Functionality depends on the current Playable as well as the current
 	 * Player. Some Playables may not allow themselves to be skipped.
 	 */
 	void previous();
-
-	/**
-	 * Ask the Player to skip to the first Playable (if there is one).
-	 * Functionality depends on the current Playable as well as the current
-	 * Player. Some Playables may not allow themselves to be skipped.
-	 */
-	void first();
 
 }

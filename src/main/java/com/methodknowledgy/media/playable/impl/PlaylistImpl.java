@@ -15,6 +15,9 @@ public class PlaylistImpl extends Vector<Playable> implements Playlist {
     private static final long serialVersionUID = 1L;
     private int index = -1;
     private boolean autoAdvance;
+    
+    public void initialize() {
+    }
 
     public boolean getAutoAdvance() {
         return autoAdvance;
