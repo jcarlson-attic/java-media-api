@@ -1,19 +1,14 @@
 package com.methodknowledgy.media.playable.impl;
 
-import java.util.List;
 import java.util.Map;
 
 import com.methodknowledgy.events.dispatch.EventDispatcher;
 import com.methodknowledgy.media.playable.Playable;
-import com.methodknowledgy.media.playable.Segment;
-import com.methodknowledgy.media.rendering.Renderer;
 
 public class PlayableImpl implements Playable {
 
     private Map<String, String> attributes;
-    private Renderer renderer;
     private Long runTime;
-    private List<Segment> segments;
     private State state;
     private Boolean active;
     private Boolean scrubbable;
@@ -34,15 +29,6 @@ public class PlayableImpl implements Playable {
                 this.attributes, this.attributes = attributes);
     }
 
-    public Renderer getRenderer() {
-        return renderer;
-    }
-
-    public void setRenderer(Renderer renderer) {
-        EventDispatcher.getInstance().dispatch(this, "renderer", this.renderer,
-                this.renderer = renderer);
-    }
-
     public Long getRunTime() {
         return runTime;
     }
@@ -50,15 +36,6 @@ public class PlayableImpl implements Playable {
     public void setRunTime(Long runTime) {
         EventDispatcher.getInstance().dispatch(this, "runTime", this.runTime,
                 this.runTime = runTime);
-    }
-
-    public List<Segment> getSegments() {
-        return segments;
-    }
-
-    public void setSegments(List<Segment> segments) {
-        EventDispatcher.getInstance().dispatch(this, "segments", this.segments,
-                this.segments = segments);
     }
 
     public State getState() {
@@ -95,12 +72,6 @@ public class PlayableImpl implements Playable {
     public void setSkippable(Boolean skippable) {
         EventDispatcher.getInstance().dispatch(this, "skippable",
                 this.skippable, this.skippable = skippable);
-    }
-
-    public void render() {
-        if (getRenderer() != null) {
-            getRenderer().render();
-        }
     }
 
 }

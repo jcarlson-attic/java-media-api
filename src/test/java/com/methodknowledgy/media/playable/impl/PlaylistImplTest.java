@@ -6,14 +6,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Vector;
 
+import javax.swing.Renderer;
+import javax.swing.text.Segment;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import com.methodknowledgy.media.playable.Playable;
-import com.methodknowledgy.media.playable.Segment;
-import com.methodknowledgy.media.rendering.Renderer;
 
 public class PlaylistImplTest {
 

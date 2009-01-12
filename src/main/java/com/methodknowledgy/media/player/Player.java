@@ -21,10 +21,6 @@ import com.methodknowledgy.media.playable.Playable;
  */
 public interface Player {
 	
-	Transport getTransport();
-	
-	Canvas getCanvas();
-
 	Playable getCurrent();
 
 	void load(Playable playable);

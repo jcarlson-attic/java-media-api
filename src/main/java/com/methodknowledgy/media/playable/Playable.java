@@ -1,9 +1,6 @@
 package com.methodknowledgy.media.playable;
 
-import java.util.List;
 import java.util.Map;
-
-import com.methodknowledgy.media.rendering.Renderer;
 
 public interface Playable {
 
@@ -28,24 +25,12 @@ public interface Playable {
 
     Boolean isSkippable();
 
-    List<Segment> getSegments();
-
     /**
      * @return The total run time of this Playable, in seconds. Run time is
      *         <code>null</code> if the duration cannot be determined or is
      *         indefinite.
      */
     Long getRunTime();
-
-    /**
-     * @return The rendering object that will be used to draw this Playable.
-     */
-    Renderer getRenderer();
-
-    /**
-     * Shortcut method to invoke this Playable's Renderer.
-     */
-    void render();
 
     /**
      * @return An extended list of attributes for this Playable object.

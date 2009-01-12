@@ -5,10 +5,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Vector;
 
+import javax.swing.Renderer;
+import javax.swing.text.Segment;
+
 import com.methodknowledgy.media.playable.Playable;
 import com.methodknowledgy.media.playable.Playlist;
-import com.methodknowledgy.media.playable.Segment;
-import com.methodknowledgy.media.rendering.Renderer;
 
 public class PlaylistImpl extends Vector<Playable> implements Playlist {
 

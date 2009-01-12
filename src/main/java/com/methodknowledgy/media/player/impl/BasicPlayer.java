@@ -3,29 +3,17 @@ package com.methodknowledgy.media.player.impl;
 import com.methodknowledgy.events.dispatch.EventDispatcher;
 import com.methodknowledgy.events.impl.ChangeEvent;
 import com.methodknowledgy.media.playable.Playable;
-import com.methodknowledgy.media.player.Canvas;
 import com.methodknowledgy.media.player.Player;
-import com.methodknowledgy.media.player.Transport;
 
 public class BasicPlayer implements Player {
 
     private Playable playable;
-
-    public Canvas getCanvas() {
-        // TODO Auto-generated method stub
-        return null;
-    }
 
     public Playable getCurrent() {
         return playable;
     }
 
     public RepeatMode getRepeatMode() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
-    public Transport getTransport() {
         // TODO Auto-generated method stub
         return null;
     }
