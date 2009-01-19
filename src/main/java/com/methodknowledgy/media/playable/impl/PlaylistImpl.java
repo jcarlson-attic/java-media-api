@@ -5,7 +5,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Vector;
 
-import javax.swing.Renderer;
 import javax.swing.text.Segment;
 
 import com.methodknowledgy.media.playable.Playable;
@@ -15,15 +14,7 @@ public class PlaylistImpl extends Vector<Playable> implements Playlist {
 
     private static final long serialVersionUID = 1L;
     private int index = -1;
-    private boolean autoAdvance;
     
-    public void initialize() {
-    }
-
-    public boolean getAutoAdvance() {
-        return autoAdvance;
-    }
-
     public boolean hasCurrent() {
         return index > -1;
     }
@@ -96,11 +87,6 @@ public class PlaylistImpl extends Vector<Playable> implements Playlist {
         return null;
     }
 
-    public Renderer getRenderer() {
-        // TODO Auto-generated method stub
-        return null;
-    }
-
     public Long getRunTime() {
         // TODO Auto-generated method stub
         return null;
@@ -129,11 +115,6 @@ public class PlaylistImpl extends Vector<Playable> implements Playlist {
     public Boolean isSkippable() {
         // TODO Auto-generated method stub
         return null;
-    }
-
-    public void render() {
-        // TODO Auto-generated method stub
-
     }
 
     @Override

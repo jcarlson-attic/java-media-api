@@ -5,13 +5,6 @@ import java.util.Map;
 public interface Playable {
 
     /**
-     * Called by the Player when a Playable is loaded for the first time. Gives
-     * a Playable a chance to load any dependent resources and perform any other
-     * pre-render duties. Once the Playable is READY, the Player will render it.
-     */
-    void initialize();
-
-    /**
      * Indicates if this Playable is viewable by the user. A Playable may become
      * inactive if it is hidden from view, such as during a Play Chain
      * Injection, or an advertisement overlay.

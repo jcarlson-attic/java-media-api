@@ -1,11 +1,9 @@
 package com.methodknowledgy.media.player.impl;
 
-import com.methodknowledgy.events.dispatch.EventDispatcher;
-import com.methodknowledgy.events.impl.ChangeEvent;
 import com.methodknowledgy.media.playable.Playable;
 import com.methodknowledgy.media.player.Player;
 
-public class BasicPlayer implements Player {
+public class PlayerImpl implements Player {
 
     private Playable playable;
 
@@ -24,14 +22,7 @@ public class BasicPlayer implements Player {
     }
 
     public void load(Playable playable) {
-        // TODO: If the event is distributed before the Playable is finished
-        // LOADING, it may not be complete when subscribers try to access it.
-        // Conversely, if we wait for the Playable to load, we may cause thread
-        // locks.
-        ChangeEvent<Player, Playable> event = new ChangeEvent<Player, Playable>(
-                this, "playable", this.playable, this.playable = playable);
-        EventDispatcher.getInstance().dispatch(event);
-        playable.initialize();
+        // TODO Auto-generated method stub
     }
 
     public void setRandom(boolean random) {

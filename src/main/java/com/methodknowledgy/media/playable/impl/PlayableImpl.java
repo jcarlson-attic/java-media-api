@@ -2,7 +2,6 @@ package com.methodknowledgy.media.playable.impl;
 
 import java.util.Map;
 
-import com.methodknowledgy.events.dispatch.EventDispatcher;
 import com.methodknowledgy.media.playable.Playable;
 
 public class PlayableImpl implements Playable {
@@ -25,8 +24,7 @@ public class PlayableImpl implements Playable {
     }
 
     public void setAttributes(Map<String, String> attributes) {
-        EventDispatcher.getInstance().dispatch(this, "attributes",
-                this.attributes, this.attributes = attributes);
+        this.attributes = attributes;
     }
 
     public Long getRunTime() {
@@ -34,8 +32,7 @@ public class PlayableImpl implements Playable {
     }
 
     public void setRunTime(Long runTime) {
-        EventDispatcher.getInstance().dispatch(this, "runTime", this.runTime,
-                this.runTime = runTime);
+        this.runTime = runTime;
     }
 
     public State getState() {
@@ -43,8 +40,7 @@ public class PlayableImpl implements Playable {
     }
 
     public void setState(State state) {
-        EventDispatcher.getInstance().dispatch(this, "state", this.state,
-                this.state = state);
+        this.state = state;
     }
 
     public Boolean isActive() {
@@ -52,8 +48,7 @@ public class PlayableImpl implements Playable {
     }
 
     public void setActive(Boolean active) {
-        EventDispatcher.getInstance().dispatch(this, "active", this.active,
-                this.active = active);
+        this.active = active;
     }
 
     public Boolean isScrubbable() {
@@ -61,8 +56,7 @@ public class PlayableImpl implements Playable {
     }
 
     public void setScrubbable(Boolean scrubbable) {
-        EventDispatcher.getInstance().dispatch(this, "scrubbable",
-                this.scrubbable, this.scrubbable = scrubbable);
+        this.scrubbable = scrubbable;
     }
 
     public Boolean isSkippable() {
@@ -70,8 +64,7 @@ public class PlayableImpl implements Playable {
     }
 
     public void setSkippable(Boolean skippable) {
-        EventDispatcher.getInstance().dispatch(this, "skippable",
-                this.skippable, this.skippable = skippable);
+        this.skippable = skippable;
     }
 
 }

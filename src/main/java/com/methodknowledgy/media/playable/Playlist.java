@@ -15,8 +15,6 @@ import java.util.List;
  */
 public interface Playlist extends List<Playable>, Playable {
 
-    boolean getAutoAdvance();
-    
     boolean hasCurrent();
 
     Playable current();

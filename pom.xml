@@ -48,10 +48,5 @@
 			<version>4.5</version>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>com.methodknowledgy</groupId>
-			<artifactId>generic-event-support</artifactId>
-			<version>0.3.0-SNAPSHOT</version>
-		</dependency>
 	</dependencies>
 </project>
