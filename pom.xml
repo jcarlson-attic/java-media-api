@@ -48,5 +48,10 @@
 			<version>4.5</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.google.gwt</groupId>
+			<artifactId>gwt-user</artifactId>
+			<version>1.5.3</version>
+		</dependency>
 	</dependencies>
 </project>
